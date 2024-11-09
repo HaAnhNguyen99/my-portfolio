@@ -421,6 +421,9 @@ export interface ApiProfileProfile extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     name: Schema.Attribute.String;
+    profile_pic: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
     publishedAt: Schema.Attribute.DateTime;
     Role: Schema.Attribute.String;
     short_name: Schema.Attribute.String;

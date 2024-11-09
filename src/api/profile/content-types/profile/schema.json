@@ -29,6 +29,16 @@
       "relation": "oneToMany",
       "target": "api::skill.skill",
       "mappedBy": "profile"
+    },
+    "profile_pic": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }
