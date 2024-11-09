@@ -424,6 +424,7 @@ export interface ApiProfileProfile extends Struct.CollectionTypeSchema {
     publishedAt: Schema.Attribute.DateTime;
     Role: Schema.Attribute.String;
     short_name: Schema.Attribute.String;
+    skills: Schema.Attribute.Relation<'oneToMany', 'api::skill.skill'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -503,6 +504,32 @@ export interface ApiReviewReview extends Struct.CollectionTypeSchema {
     title: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.Unique;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiSkillSkill extends Struct.CollectionTypeSchema {
+  collectionName: 'skills';
+  info: {
+    displayName: 'skill';
+    pluralName: 'skills';
+    singularName: 'skill';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::skill.skill'> &
+      Schema.Attribute.Private;
+    profile: Schema.Attribute.Relation<'manyToOne', 'api::profile.profile'>;
+    publishedAt: Schema.Attribute.DateTime;
+    skill_name: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1018,6 +1045,7 @@ declare module '@strapi/strapi' {
       'api::profile.profile': ApiProfileProfile;
       'api::project.project': ApiProjectProject;
       'api::review.review': ApiReviewReview;
+      'api::skill.skill': ApiSkillSkill;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;
