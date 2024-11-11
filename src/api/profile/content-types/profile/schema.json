@@ -31,6 +31,17 @@
       "mappedBy": "profile"
     },
     "profile_pic": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "cv": {
       "allowedTypes": [
         "images",
         "files",
@@ -38,7 +49,8 @@
         "audios"
       ],
       "type": "media",
-      "multiple": false
+      "multiple": false,
+      "required": true
     }
   }
 }
