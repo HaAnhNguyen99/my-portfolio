@@ -17,9 +17,9 @@
     },
     "categories": {
       "type": "relation",
-      "relation": "oneToMany",
+      "relation": "manyToMany",
       "target": "api::category.category",
-      "mappedBy": "project"
+      "mappedBy": "projects"
     },
     "pj_preview_img": {
       "type": "media",

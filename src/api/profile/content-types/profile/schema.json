@@ -42,15 +42,25 @@
       ]
     },
     "cv": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false,
+      ]
+    },
+    "email": {
+      "type": "email",
       "required": true
+    },
+    "github_link": {
+      "type": "string"
+    },
+    "linkin_profile": {
+      "type": "string"
     }
   }
 }
