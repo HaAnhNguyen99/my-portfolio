@@ -562,6 +562,7 @@ export interface ApiWorkWork extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     description: Schema.Attribute.Blocks;
     duration: Schema.Attribute.String;
+    images: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::work.work'> &
       Schema.Attribute.Private;
