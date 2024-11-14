@@ -4,7 +4,8 @@
   "info": {
     "singularName": "skill",
     "pluralName": "skills",
-    "displayName": "skill"
+    "displayName": "skill",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -14,10 +15,10 @@
     "skill_name": {
       "type": "string"
     },
-    "profile": {
+    "skill_category": {
       "type": "relation",
       "relation": "manyToOne",
-      "target": "api::profile.profile",
+      "target": "api::skill-category.skill-category",
       "inversedBy": "skills"
     }
   }
